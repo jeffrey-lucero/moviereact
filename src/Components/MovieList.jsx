@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GlobalApi from '../Services/GlobalApi';
 import MovieCard from './MovieCard';
+import { IoChevronBackOutline, IoChevronForward } from 'react-icons/io5';
 
 function MovieList({ genreId }) {
 	const [movieList, setMovieList] = useState([]);
@@ -14,9 +15,9 @@ function MovieList({ genreId }) {
 		});
 	};
 	return (
-		<div>
+		<div className="flex overflow-x-auto gap-8 pt-5 px-3 pb-5 scrollbar-hide scroll-smooth ">
 			{movieList.map((item, i) => (
-				<div>
+				<div className="flex-shrink-0 ">
 					<MovieCard movie={item} />
 				</div>
 			))}
